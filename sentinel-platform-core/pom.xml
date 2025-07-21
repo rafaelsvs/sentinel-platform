@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.sentinel</groupId>
+        <artifactId>sentinel-platform</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>sentinel-platform-core</artifactId>
+
+    <dependencies>
+        <!-- Suporte a componentes do Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Lombok (se usado nas services ou strategies) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sentinel</groupId>
+            <artifactId>sentinel-platform-infra</artifactId>
+        </dependency>
+
+        <!-- Acesso às entidades comuns -->
+        <dependency>
+            <groupId>com.sentinel</groupId>
+            <artifactId>sentinel-platform-common</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>
