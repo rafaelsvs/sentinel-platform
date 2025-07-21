@@ -32,5 +32,7 @@ public class DeviceEventEntity {
 
     private double score;
 
+    private boolean flagged;
+
     private Instant createdAt;
 }

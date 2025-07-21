@@ -18,7 +18,6 @@ public class DeviceController {
         this.deviceService = deviceService;
     }
 
-    // POST /device-event
     @PostMapping("/event")
     public ResponseEntity<?> receiveDeviceEvent(@Valid @RequestBody DeviceEventRequest request) {
         String eventId = deviceService.processDeviceEvent(request);
@@ -27,9 +26,8 @@ public class DeviceController {
         );
     }
 
-    // GET /device-score/{deviceId}
     @GetMapping("/score/{deviceId}")
-    public ResponseEntity<DeviceScoreResponse> getDeviceScore(@PathVariable String deviceId) {
+    public ResponseEntity<DeviceScoreResponse> getDeviceScore(@PathVariable("deviceId") String deviceId) {
         DeviceScoreResponse score = deviceService.getDeviceScore(deviceId);
         return ResponseEntity.ok(score);
     }

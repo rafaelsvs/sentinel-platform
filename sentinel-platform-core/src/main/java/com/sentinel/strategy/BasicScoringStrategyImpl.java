@@ -1,9 +1,11 @@
 package com.sentinel.strategy;
 
 import com.sentinel.dto.DeviceEventRequest;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class BasicScoringStrategyImpl implements RiskScoringStrategy {
 
     @Override

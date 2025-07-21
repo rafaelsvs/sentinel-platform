@@ -13,8 +13,8 @@ public class ReputationService {
     }
 
     public double evaluateDevice(String deviceId) {
-        long anomalies = repo.countFlags(deviceId);
-        long total = repo.countEvents(deviceId);
+        long anomalies = repo.countByDeviceIdAndScoreLessThan(deviceId, 30.0);
+        long total = repo.countByDeviceId(deviceId);
 
         if (total == 0) return 50.0;
 
@@ -22,4 +22,3 @@ public class ReputationService {
         return 100.0 - (ratio * 100);
     }
 }
-
