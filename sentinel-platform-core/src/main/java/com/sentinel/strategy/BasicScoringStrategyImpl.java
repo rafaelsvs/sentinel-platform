@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class BasicScoringStrategyImpl implements RiskScoringStrategy {
 
     @Override
-    public int calculateScore(DeviceEventRequest request) {
+    public double calculateScore(DeviceEventRequest request) {
         int score = 100;
 
         // Regra: dispositivo com root = risco alto

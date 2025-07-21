@@ -29,7 +29,7 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Override
     public String processDeviceEvent(DeviceEventRequest request) {
-        int score = scoringStrategy.calculateScore(request);
+        double score = scoringStrategy.calculateScore(request);
         String eventId = UUID.randomUUID().toString();
 
         DeviceEventEntity entity = toEntity(request, score, eventId);
@@ -55,7 +55,7 @@ public class DeviceServiceImpl implements DeviceService {
         ));
     }
 
-    private DeviceEventEntity toEntity(DeviceEventRequest request, int score, String eventId) {
+    private DeviceEventEntity toEntity(DeviceEventRequest request, double score, String eventId) {
         return DeviceEventEntity.builder()
                 .eventId(eventId)
                 .deviceId(request.getDeviceId())

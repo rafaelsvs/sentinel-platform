@@ -30,7 +30,7 @@ public class DeviceEventEntity {
 
     private Instant timestamp;
 
-    private int score;
+    private double score;
 
     private Instant createdAt;
 }
